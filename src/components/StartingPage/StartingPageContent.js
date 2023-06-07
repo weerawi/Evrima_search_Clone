@@ -1,11 +1,11 @@
-import classes from './StartingPageContent.module.css';
+ 
 import Typed from 'react-typed';
 
 
 const StartingPageContent = () => {
   return (
-    <section className={classes.starting}>
-      <h2>Welcome on Board!</h2>
+    <div className=" flex justify-center items-center h-96  bg-gray-200">
+      <h2 className='text-xl bg-red-400  '>Welcome on Evrima!</h2>
       <Typed
                 strings={[
                     'Search for products',
@@ -17,7 +17,7 @@ const StartingPageContent = () => {
                     loop >
                     <input type="text"/>
                 </Typed>
-    </section>
+    </div>
   );
 };
 
