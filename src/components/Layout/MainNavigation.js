@@ -1,23 +1,22 @@
 import { Link } from 'react-router-dom';
-
-import classes from './MainNavigation.module.css';
+ 
 
 const MainNavigation = () => {
   return (
-    <header className={classes.header}>
+    <header className=" w-full h-20 bg-red-300 flex justify-between items-center">
       <Link to='/'>
-        <div className={classes.logo}>React Auth</div>
+        <div className=" text-3xl text-white m-0">Evrima</div>
       </Link>
       <nav>
-        <ul>
-          <li>
+        <ul className='m-0 p-0 text-red-700 flex items-baseline hover:text-red-900 font-medium'>
+          <li className='mx-4'>
             <Link to='/auth'>Login</Link>
           </li>
-          <li>
+          <li className='mx-4'>
             <Link to='/profile'>Profile</Link>
           </li>
-          <li>
-            <button>Logout</button>
+          <li className='mx-4'>
+            <button className='bg-transparent text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200'>Logout</button>
           </li>
         </ul>
       </nav>
