@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const MainNavigation = () => {
   return (
-    <header className=" w-full h-20 bg-red-300 flex justify-between items-center">
+    <header className=" w-full h-24 bg-red-300 flex justify-between items-center">
       <Link to='/'>
-        <div className=" text-3xl text-white m-0">Evrima</div>
+        <div className=" ml-2 text-3xl text-white m-0">Evrima</div>
       </Link>
       <nav>
         <ul className='m-0 p-0 text-red-700 flex items-baseline hover:text-red-900 font-medium'>
