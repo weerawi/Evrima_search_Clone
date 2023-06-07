@@ -1,12 +1,17 @@
  
-import Typed from 'react-typed';
+import Typed from 'react-typed'; 
+import Card from '../Card/Card';
 
 
-const StartingPageContent = () => {
+const StartingPageContent = (props ) => {
+
+  
+
+
   return (
-    <div className="h-[85vh] flex items-center justify-center">
-      <div className=" mx-auto w-10/12 lg:w-90  rounded-md  shadow-md p-10 text-center  flex-row justify-center items-center   my-5 mx-5 bg-gray-200">
-        <h2 className='my-8 text-4xl md:text-6xl text-red-800  '>Welcome on Evrima!</h2>
+    <div className="h-auto flex-row pt-44 items-center justify-center">
+      <div className=" mx-auto w-10/12 lg:w-90  mb-56 rounded-md  shadow-md p-10 text-center  flex-row justify-center items-center   my-5 mx-5 bg-gray-200">
+        <h2 className='my-8 text-3xl md:text-5xl text-red-800  '>Welcome to Evrima!</h2>
         <Typed
                   strings={[
                       '  Search for products',
@@ -16,8 +21,23 @@ const StartingPageContent = () => {
                       backSpeed={50}
                       attr="placeholder"
                       loop >
-                      <input className="ml-2 bg-transparent text-gray-800  text-2xl md:text-4xl  " type="text"/>
-                  </Typed>
+                      <input className="ml-2 bg-transparent text-gray-800  text-xl md:text-2xl  " type="text" value={props.value}
+            onChange={props.change} />
+
+                      
+        </Typed>
+      </div>
+
+      <div> 
+          {props.load ? (
+            <p>Loading search results...</p>
+          ) : (
+            <div className="grid grid-cols-2 gap-4">
+              {props.result.map((product) => (
+                <Card key={ product.id} name={product.name} />
+              ))}
+            </div>
+          )}
       </div>
     </div>
     

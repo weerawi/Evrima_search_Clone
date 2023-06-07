@@ -2,12 +2,13 @@ import { Fragment } from 'react';
 
 import MainNavigation from './MainNavigation';
 import Footer from './Footer';
+import BG from "../../assets/bgimage.jpg";
 
 const Layout = (props) => {
   return (
-    <Fragment>
+    <Fragment  >
       <MainNavigation />
-      <main>{props.children}</main>
+      <main className='bg-gray-600'>{props.children}</main>
       <Footer />
     </Fragment>
   );
