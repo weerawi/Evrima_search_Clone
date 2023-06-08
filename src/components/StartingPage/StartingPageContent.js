@@ -25,7 +25,7 @@ const StartingPageContent = (props) => {
     <div  className={` h-auto pb-20  flex-row pt-44 items-center justify-center`}>
       <div 
         data-aos="fade-up"
-        data-aos-delay="10"
+        data-aos-delay="0"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out "
         data-aos-anchor-placement="center-center" className="mx-auto w-10/12 lg:w-90  mb-56 rounded-md shadow-md p-10 text-center flex-row justify-center items-center my-5 mx-5 bg-gray-200">
@@ -90,7 +90,7 @@ const StartingPageContent = (props) => {
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
               data-aos-delay="30"
-              data-aos-duration="500" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
+              data-aos-duration="800" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.filter((product) => product.name === selectedName).map((product) => (
                 <Card key={product.id} name={product.name} />
               ))}
