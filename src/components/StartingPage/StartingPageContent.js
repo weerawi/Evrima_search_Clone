@@ -5,14 +5,22 @@ import { useState } from 'react';
 
 const StartingPageContent = (props) => {
   const [searchCard, setSearchCard] = useState(false);
+  const [selectedName, setSelectedName] = useState('');
 
   const handleSearch = () => {
     props.search(props.value);
     setSearchCard(true);
   };
 
+  const handleNameClick = (name) => {
+    setSelectedName(name);
+    props.change({ target: { value: name } });
+    setSearchCard(true);
+  };
+
   return (
-    <div className={`${(searchCard)? "h-auto" : "h-[85vh]"}   flex-row pt-44 items-center justify-center`}>
+    // ${(searchCard)? "h-auto pb-20" : "h-[85vh]"}
+    <div className={` h-auto pb-20  flex-row pt-44 items-center justify-center`}>
       <div className="mx-auto w-10/12 lg:w-90  mb-56 rounded-md shadow-md p-10 text-center flex-row justify-center items-center my-5 mx-5 bg-gray-200">
         <h2 className="my-8 text-3xl md:text-5xl text-red-800 ">Welcome to Evrima!</h2>
         <Typed
@@ -54,11 +62,11 @@ const StartingPageContent = (props) => {
             })
             .map((product) => (
               <div
-                className="cursor-pointer hover:text-red-800 text-left my-2 mx-4"
+                className={`cursor-pointer hover:text-red-800 text-left my-2 mx-4 ${
+                  product.name === selectedName ? 'text-red-800' : ''
+                }`}
                 key={product.id}
-                onClick={() =>
-                  props.change({ target: { value: product.name } })
-                }
+                onClick={() => handleNameClick(product.name)}
               >
                 {product.name}
               </div>
@@ -72,7 +80,7 @@ const StartingPageContent = (props) => {
             <p>Loading search results..</p>
           ) : (
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
-              {props.result.map((product) => (
+              {props.result.filter((product) => product.name === selectedName).map((product) => (
                 <Card key={product.id} name={product.name} />
               ))}
             </div>
