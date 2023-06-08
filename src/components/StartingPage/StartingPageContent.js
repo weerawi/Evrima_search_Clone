@@ -22,10 +22,23 @@ const StartingPageContent = (props ) => {
                       attr="placeholder"
                       loop >
                       <input className="ml-2 bg-transparent text-gray-800  text-xl md:text-2xl  " type="text" value={props.value}
-            onChange={props.change} />
-
-                      
+            onChange={props.change} />           
         </Typed>
+        <button className='bg-transparent text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200'>Search</button>
+
+
+        <div className="bg-white flex flex-col border border-gray-300">
+          {props.result.map((product) => (
+            <div
+              className="cursor-pointer text-left my-2"
+              key={product.id}
+              onClick={() => props.change({ target: { value: product.name } })}
+            >
+              {product.name}
+            </div>
+          ))}
+        </div>
+
       </div>
 
       <div> 
@@ -34,8 +47,8 @@ const StartingPageContent = (props ) => {
           ) : (
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.map((product) => (
-                <Card key={ product.id} name={product.name} />
-              ))}
+              <Card key={product.id} name={product.name} />
+            ))}
             </div>
           )}
       </div>

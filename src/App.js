@@ -49,8 +49,11 @@ function App() {
       
       <Switch>
         <Route path='/' exact>
-          <HomePage value={searchInput}
-            onChange={handleSearchInputChange}  load={isLoading} result={searchResults} />
+          <HomePage 
+            value={searchInput}
+            onChange={handleSearchInputChange}  
+            load={isLoading} 
+            result={searchResults.slice(0, 10)} />
         </Route>
         <Route path='/auth'>
           <AuthPage   />
