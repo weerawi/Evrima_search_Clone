@@ -43,7 +43,7 @@ const StartingPageContent = (props ) => {
 
       <div> 
           {props.load ? (
-            <p>Loading search results...</p>
+            <p>Loading search results..</p>
           ) : (
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.map((product) => (
