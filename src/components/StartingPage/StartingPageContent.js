@@ -1,12 +1,11 @@
  
 import Typed from 'react-typed'; 
-import Card from '../Card/Card';
+import Card from '../Card/Card'; 
 
 
 const StartingPageContent = (props ) => {
 
-  
-
+   
 
   return (
     <div className="h-auto flex-row pt-44 items-center justify-center">
@@ -24,11 +23,20 @@ const StartingPageContent = (props ) => {
                       <input className="ml-2 bg-transparent text-gray-800  text-xl md:text-2xl  " type="text" value={props.value}
             onChange={props.change} />           
         </Typed>
-        <button className='bg-transparent text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200'>Search</button>
+        <button onClick={() => props.search(props.value)} className='bg-transparent text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200'>Search</button>
 
 
         <div className="bg-white flex flex-col border border-gray-300">
-          {props.result.map((product) => (
+          {props.result.filter((product) => {
+              const searchTerm = props.value.toLowerCase();
+              const fullName = product.name.toLowerCase();
+
+              return (
+                searchTerm &&
+                fullName.startsWith(searchTerm) &&
+                fullName !== searchTerm
+              );
+            }).map((product) => (
             <div
               className="cursor-pointer text-left my-2"
               key={product.id}

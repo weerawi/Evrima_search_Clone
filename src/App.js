@@ -41,6 +41,12 @@ function App() {
   const handleSearchInputChange = (event) => {
     setSearchInput(event.target.value);
   };
+
+  const onSearch = (searchTerm) => {
+    setSearchInput(searchTerm);
+    // our api to fetch the search result
+    console.log("search ", searchTerm);
+  };
    
 
   return (
@@ -53,7 +59,8 @@ function App() {
             value={searchInput}
             onChange={handleSearchInputChange}  
             load={isLoading} 
-            result={searchResults.slice(0, 10)} />
+            result={searchResults.slice(0, 10)}
+            search={onSearch} />
         </Route>
         <Route path='/auth'>
           <AuthPage   />
