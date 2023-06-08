@@ -14,8 +14,7 @@ const StartingPageContent = (props) => {
 
   const handleNameClick = (name) => {
     setSelectedName(name);
-    props.change({ target: { value: name } });
-    setSearchCard(true);
+    props.change({ target: { value: name } }); 
   };
 
   return (
