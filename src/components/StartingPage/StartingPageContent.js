@@ -22,7 +22,7 @@ const StartingPageContent = (props) => {
 
   return (
     // ${(searchCard)? "h-auto pb-20" : "h-[85vh]"}
-    <div  className={` h-auto pb-20  flex-row pt-44 items-center justify-center`}>
+    <div  className=  " overflow-x-hidden h-auto pb-20  flex-row pt-44 items-center justify-center ">
       <div 
         data-aos="fade-up"
         data-aos-delay="0"
@@ -87,10 +87,11 @@ const StartingPageContent = (props) => {
             <p>Loading search results..</p>
           ) : (
             <div 
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-              data-aos-delay="30"
-              data-aos-duration="800" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
+            data-aos="flip-up"
+              data-aos-delay="0"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out "
+              data-aos-anchor-placement="center-center" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.filter((product) => product.name === selectedName).map((product) => (
                 <Card key={product.id} name={product.name} />
               ))}
