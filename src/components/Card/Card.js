@@ -43,12 +43,12 @@ const toggleReadMore = () => {
 
     <div className="card-container mx-auto w-72 h-96 justify-center text-center rounded-3xl bg-gray-300 shadow-lg">
   <div className="relative">
-    <img className="w-72 h-40 rounded-3xl" src={props.image} alt="card-image" />
+    {/* <img className="w-72 h-40 rounded-3xl" src={props.image} alt="card-image" /> */}
     <span className="absolute bottom-0 right-0 p-2 bg-green-300 rounded-bl-3xl rounded-tr-3xl">From {props.price}$</span>
   </div>
 
   <div className="p-4">
-    <h2 className="text-lg font-bold text-left">{props.title}</h2>
+    <h2 className="text-lg font-bold text-left">{props.name}</h2>
     <div className="flex justify-left text-sm pt-4">
       {/* <img className="w-4 h-4" src={icons.calender} alt="date" /> */}
       <div className="px-1">{props.date}</div>

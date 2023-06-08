@@ -11,7 +11,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
-  const url = "https://api.restful-api.dev/objects?search";
+  const url = "https://api.restful-api.dev/objects?id=3&id=5&id=10";
 
 
   useEffect(() => {
@@ -68,22 +68,7 @@ function App() {
         <Route path='/profile'>
           <UserProfile   />
         </Route>
-      </Switch>
-      
-
-      {/* <div> 
-          {isLoading ? (
-            <p>Loading search results...</p>
-          ) : (
-            <div className="grid grid-cols-2 gap-4">
-              {searchResults.map((product) => (
-                <Card key={ product.id} name={product.name} />
-              ))}
-            </div>
-          )}
-      </div> */}
-
-
+      </Switch> 
     </Layout>
   );
 }
