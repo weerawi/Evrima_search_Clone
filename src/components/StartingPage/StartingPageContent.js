@@ -32,7 +32,7 @@ const StartingPageContent = (props ) => {
           {props.load ? (
             <p>Loading search results...</p>
           ) : (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.map((product) => (
                 <Card key={ product.id} name={product.name} />
               ))}
