@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./Card.css";
 
 const Card = (props) => {
 
@@ -41,40 +42,52 @@ const toggleReadMore = () => {
     //   <div>{props.name}</div> */}
     // </div>
 
-    <div className="card-container mx-auto w-72 h-96 justify-center text-center rounded-3xl bg-gray-300 shadow-lg">
-  <div className="relative">
-    <img className="w-72 h-40 rounded-3xl" src={props.image} alt="card-image" />
-    <span className="absolute bottom-0 right-0 p-2 bg-green-300 rounded-bl-3xl rounded-tr-3xl">From {props.price}$</span>
-  </div>
+//     <div className="card-container mx-auto w-72 h-96 justify-center text-center rounded-3xl bg-gray-300 shadow-lg">
+//   <div className="relative">
+//     <img className="w-72 h-40 rounded-3xl" src={props.image} alt="card-image" />
+//     <span className="absolute bottom-0 right-0 p-2 bg-green-300 rounded-bl-3xl rounded-tr-3xl">From {props.price}$</span>
+//   </div>
 
-  <div className="p-4">
-    <h2 className="text-lg font-bold text-left">{props.name}</h2>
-    <div className="flex justify-left text-sm pt-4">
-      {/* <img className="w-4 h-4" src={icons.calender} alt="date" /> */}
-      <div className="px-1">{props.date}</div>
+//   <div className="p-4">
+//     <h2 className="text-lg font-bold text-left">{props.name}</h2>
+//     <div className="flex justify-left text-sm pt-4">
+//       {/* <img className="w-4 h-4" src={icons.calender} alt="date" /> */}
+//       <div className="px-1">{props.date}</div>
+//     </div>
+//     <div className="flex justify-left text-sm">
+//       {/* <img className="w-4 h-4" src={icons.location} alt="places" /> */}
+//       <div className="px-1">{props.places} Places</div>
+//     </div>
+//     <div className="flex justify-left text-sm">
+//       {/* <img className="w-4 h-4" src={icons.world} alt="countries" /> */}
+//       <div className="px-1">{props.countries} Countries</div>
+//     </div>
+
+//     <div className="text-left pt-4">
+//       {isReadMore ? text.slice(0, 100) : text}
+//       <span onClick={toggleReadMore} className="read-or-hide">
+//         {isReadMore ? "...    read more" : " show less"}
+//       </span>
+//     </div>
+//   </div>
+
+//   <hr className="card-hr" />
+
+//   <button className="card-view-btn">View Details</button>
+// </div>
+
+
+
+ 
+
+<div className="min-h-screen">
+      <div id="Animation"  >
+         <div id='content' className="animation-text text-white">
+          <div>{props.name}</div>
+          <div>{props.name}</div>
+         </div> 
+      </div>
     </div>
-    <div className="flex justify-left text-sm">
-      {/* <img className="w-4 h-4" src={icons.location} alt="places" /> */}
-      <div className="px-1">{props.places} Places</div>
-    </div>
-    <div className="flex justify-left text-sm">
-      {/* <img className="w-4 h-4" src={icons.world} alt="countries" /> */}
-      <div className="px-1">{props.countries} Countries</div>
-    </div>
-
-    <div className="text-left pt-4">
-      {isReadMore ? text.slice(0, 100) : text}
-      <span onClick={toggleReadMore} className="read-or-hide">
-        {isReadMore ? "...    read more" : " show less"}
-      </span>
-    </div>
-  </div>
-
-  <hr className="card-hr" />
-
-  <button className="card-view-btn">View Details</button>
-</div>
-
 
 
   )

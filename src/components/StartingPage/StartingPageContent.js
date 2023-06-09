@@ -2,6 +2,7 @@
 import Typed from 'react-typed';
 import Card from '../Card/Card';
 import { useState } from 'react';
+import './StartPage.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -50,7 +51,7 @@ const StartingPageContent = (props) => {
         </Typed>
         <button
           onClick={handleSearch}
-          className="bg-transparent text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200"
+          className="bg-transparent   text-red-700 font-bold rounded-md cursor-pointer hover:bg-red-900 p-2 hover:text-red-200"
         >
           Search
         </button>
@@ -78,20 +79,26 @@ const StartingPageContent = (props) => {
                 {product.name}
               </div>
             ))}
-        </div>
+        </div> 
+
       </div>
+
+
+
+
+      {/* <div id='Animation' className="min-h-screen">
+       
+    </div> */}
+
+    
+
 
       <div>
         {searchCard ? (
           props.load ? (
             <p>Loading search results..</p>
           ) : (
-            <div 
-            data-aos="flip-up"
-              data-aos-delay="0"
-              data-aos-duration="500"
-              data-aos-easing="ease-in-out "
-              data-aos-anchor-placement="center-center" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
+            <div   className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-14">
               {props.result.filter((product) => product.name === selectedName).map((product) => (
                 <Card key={product.id} name={product.name} />
               ))}
