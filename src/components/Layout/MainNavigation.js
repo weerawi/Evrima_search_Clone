@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MainNavigation = () => {
   return (
-    <header className=" w-full h-24 bg-red-300 flex justify-between items-center">
+    <header className=" w-full h-24 bg-gray-800 flex justify-between items-center">
       <Link to='/'>
         <div className=" ml-2 text-3xl text-white m-0">Evrima</div>
       </Link>

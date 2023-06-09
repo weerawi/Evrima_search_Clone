@@ -11,7 +11,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
-  const url = "https://api.restful-api.dev/objects?id=3&id=5&id=10";
+  const url = "https://api.restful-api.dev/objects?search";
 
 
   useEffect(() => {
