@@ -11,7 +11,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
-  const url = "https://api.restful-api.dev/objects?search";
+  const[error,setError] = useState(null);
+  const url = "https://api.restful-api.dev/objects?search  ";
 
 
   useEffect(() => {
@@ -22,14 +23,19 @@ function App() {
       }
 
       setIsLoading(true);
+      setError(null);
 
       try {
         const response = await axios.get(
           `${url}=${searchInput}`
         );
+        if(!response.ok){
+          throw new Error('Something went wrong!');
+        }
         setSearchResults(response.data);
       } catch (error) {
         console.error('Error fetching search results:', error);
+        setError(error.message);
       }
 
       setIsLoading(false);

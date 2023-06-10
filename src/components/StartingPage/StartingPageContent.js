@@ -101,7 +101,7 @@ AOS.init();
                 ))}
             </div>
           )}
-          {searchCard && props.load && <p>Loading search results..</p>}
+          {searchCard && props.load && <p className='text-xl justify-center align-center text-white'>Loading search results..</p>}
         </div>
     </div>
   );
