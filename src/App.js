@@ -29,11 +29,13 @@ function App() {
       const response = await axios.get(
         `${url}=${searchInput}`
       );
+      
+      setSearchResults(response.data);
       // if(!response.ok){
       //   throw new Error('Something went wrong!');
       // }
-      setSearchResults(response.data);
     } catch (error) {
+      
       console.error('Error fetching search results:', error);
       // setError(error.message);
     }
@@ -55,6 +57,10 @@ function App() {
     console.log("search ", searchTerm);
   };
    
+ 
+
+  
+  
 
   return (
 
@@ -66,8 +72,9 @@ function App() {
             value={searchInput}
             onChange={handleSearchInputChange}  
             load={isLoading} 
-            result={searchResults.slice(0, 10)}
+            result={searchResults.slice(0, 15)}
             search={onSearch} />
+          
         </Route>
         <Route path='/auth'>
           <AuthPage   />
