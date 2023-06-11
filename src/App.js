@@ -4,44 +4,45 @@ import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios'; 
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
-  const[error,setError] = useState(null);
+  // const[error,setError] = useState(null);
   const url = "https://api.restful-api.dev/objects?search  ";
 
 
-  useEffect(() => {
-    const fetchSearchResults = async () => {
-      if (searchInput.length === 0) {
-        setSearchResults([]);
-        return;
-      }
+  
+  const fetchSearchResults = useCallback(async () => {
+    if (searchInput.length === 0) {
+      setSearchResults([]);
+      return;
+    }
 
-      setIsLoading(true);
-      setError(null);
+    setIsLoading(true);
+    // setError(null);
 
-      try {
-        const response = await axios.get(
-          `${url}=${searchInput}`
-        );
-        if(!response.ok){
-          throw new Error('Something went wrong!');
-        }
-        setSearchResults(response.data);
-      } catch (error) {
-        console.error('Error fetching search results:', error);
-        setError(error.message);
-      }
+    try {
+      const response = await axios.get(
+        `${url}=${searchInput}`
+      );
+      // if(!response.ok){
+      //   throw new Error('Something went wrong!');
+      // }
+      setSearchResults(response.data);
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+      // setError(error.message);
+    }
 
-      setIsLoading(false);
-    };
+    setIsLoading(false);
+  } );
 
-    fetchSearchResults();
+    useEffect(() => {
+      fetchSearchResults();
   }, [searchInput]);
 
   const handleSearchInputChange = (event) => {
