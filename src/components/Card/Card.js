@@ -15,9 +15,9 @@ const toggleReadMore = () => {
 
     <div className="  m-8  ">
 
-      <div className="bg-white my-2 mx-1 rounded-lg shadow-md p-4">
+      <div className=" shadow-[5px_5px_rgba(_228,_220,_207,_0.4),_10px_10px_rgba(_228,_220,_207,_0.3),_15px_15px_rgba(_228,_220,_207,_0.2),_20px_20px_rgba(_228,_220,_207,_0.1),_25px_25px_rgba(_228,_220,_207,_0.05)] bg-black opacity-60 text-white my-2 mx-1 rounded-lg shadow-md p-4">
         <span className="text-red-900 font-medium mr-1">{props.name}</span>
-        <img src={props.image} alt="Product" className="w-full h-40 object-cover mb-4 border-2 rounded-xl" />
+        <img src={props.image} alt="Product" className="w-full h-40 object-cover  my-4 border-2 rounded-xl" />
         <div className="flex justify-between">
           <div className="flex items-center">
             <span className="text-red-900 font-medium mr-1">{props.name}</span>
