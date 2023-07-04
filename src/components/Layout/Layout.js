@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import MainNavigation from './MainNavigation';
 import Footer from './Footer';
 // import BG from "../../assets/bgimage.jpg";
-import BGV from "../../assets/bgvideo.mp4"
+import BGV from "../../assets/BGVideo3.mp4"
 
 // const Layout = (props) => {
 //   const mainStyle = {
@@ -31,15 +31,25 @@ const Layout = (props) => {
     top: 0,
     left: 0,
     width: '100%',
-    height: '100%',
+    height: '100%', 
     objectFit: 'cover',
+    opacity: 0.85,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     zIndex: -1
   };
   return (
     <Fragment  >
       <MainNavigation />
-      <main  >
-        <video autoPlay muted loop style={videoStyle}>
+      <main  style={{backgroundColor:'rgba(0, 0, 0, 0.5)'}}>
+      <style>
+      {`
+        ::selection {
+          color: red;
+          background-color: cyan;
+        }
+      `}
+    </style>
+        <video  autoPlay muted loop style={videoStyle}>
           <source src={BGV} type="video/mp4" />
           Your browser does not support the video tag.
         </video>{props.children}
